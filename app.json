@@ -1,0 +1,18 @@
+{
+  "name": "wedding-rails",
+  "scripts": {
+  },
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
