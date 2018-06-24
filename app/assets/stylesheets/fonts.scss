@@ -3,4 +3,15 @@
   src: font-url('sweetness_script.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'vollkorn';
+  src: font-url('vollkorn.eot');
+  src: font-url('vollkorn.eot?#iefix') format('embedded-opentype'),
+    font-url('vollkorn.ttf') format('truetype'),
+    font-url('vollkorn.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $font_heading: 'sweetness_script';
+$font_body: 'vollkorn';
