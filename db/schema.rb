@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_113251) do
+ActiveRecord::Schema.define(version: 2018_06_24_124000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "guests", force: :cascade do |t|
+    t.string "name"
+    t.string "dietary"
+    t.boolean "attending", default: false, null: false
+    t.boolean "name_updatable", default: false, null: false
+    t.integer "rsvp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id", "rsvp_id"], name: "index_guests_on_id_and_rsvp_id"
+  end
 
   create_table "rsvps", force: :cascade do |t|
     t.string "name"
