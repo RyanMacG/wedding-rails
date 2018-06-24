@@ -7,6 +7,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml'
@@ -22,6 +23,7 @@ group :development, :test do
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails', '~> 3.7'
 end
