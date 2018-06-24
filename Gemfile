@@ -22,6 +22,7 @@ group :development, :test do
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails', '~> 3.7'
 end
 
