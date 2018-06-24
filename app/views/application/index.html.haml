@@ -1,2 +1,26 @@
 %h1 This should be in the script font
 %p This should be vollkorn
+
+- unless @rsvp
+  = form_tag('/access-code', remote: true, id: 'rsvp_code_form') do
+    %div#code_error
+    = text_field_tag :access_key, @access_key, placeholder: 'Enter your RSVP code...', required: true
+    = submit_tag 'Submit'
+
+%div#rsvp_form
+  - if @rsvp
+    = render partial: 'partials/rsvp_form', locals: { rsvp: @rsvp }
+
+:coffee
+  $(document).ready ->
+    $('#rsvp_code_form').on('ajax:success', (event) ->
+      $('#code_error').empty()
+      [data, status, xhr] = event.detail
+      if xhr.responseText.indexOf('error') != -1
+        json_response = JSON.parse(xhr.responseText)
+        $('#code_error').append '<p>' + json_response.error + '</p>'
+      else
+        $('#rsvp_code_form').hide()
+        $('#rsvp_form').append xhr.response
+        $('#rsvp_form').show()
+    )

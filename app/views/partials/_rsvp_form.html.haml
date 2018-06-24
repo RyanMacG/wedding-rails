@@ -1,0 +1,27 @@
+= form_for(rsvp, url: rsvp_path(rsvp), local: true) do |f|
+  - if rsvp.errors.any?
+    %p errors
+    %ul
+      - rsvp.errors.full_messages.each do |msg|
+        %li= msg
+  %fieldset
+    %legend= rsvp.name
+    = f.label :dietary, 'Do you have any dietary requirements?'
+    = f.text_field :dietary
+
+    = f.label :attending, 'Can you attend?'
+    = f.check_box :attending
+
+    - rsvp.number_of_guests.times do |guest_number|
+      %fieldset
+        %legend= "Guest #{guest_number + 1}"
+        = f.fields_for :guests, rsvp.guests do |ff|
+          = ff.label :name
+          = ff.text_field :name, disabled: !ff.object.name_updatable?
+
+          = ff.label :dietary, 'Does your guest have any dietary requirements?'
+          = ff.text_field :dietary
+
+          = ff.label :attending, 'Can they attend?'
+          = ff.check_box :attending
+    = f.submit 'Submit your RSVP'
