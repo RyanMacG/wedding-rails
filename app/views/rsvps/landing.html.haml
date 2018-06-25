@@ -1,6 +1,7 @@
-.container
+.container.form-container
   .row
     .col-md-6.offset-md-3
+      %h1.text-center RSVP
       - unless @rsvp
         = form_tag('/access-code', remote: true, id: 'rsvp_code_form') do
           %p Please enter your RSVP code and we'll get your details

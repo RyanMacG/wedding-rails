@@ -16,7 +16,6 @@ class RsvpsController < ApplicationController
     if @rsvp.update(rsvp_params)
       redirect_to root_path
     else
-      binding.pry
       render 'rsvps/landing' and return
     end
   end

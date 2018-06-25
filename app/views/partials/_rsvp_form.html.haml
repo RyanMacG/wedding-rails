@@ -1,9 +1,9 @@
 = form_for(rsvp, url: rsvp_path(rsvp), local: true) do |f|
   - if rsvp.errors.any?
-    %p errors
-    %ul
+    %p Errors
+    .alert.alert-danger
       - rsvp.errors.full_messages.each do |msg|
-        %li= msg
+        %span= msg
   %fieldset
     %legend= rsvp.name
     .form-group
