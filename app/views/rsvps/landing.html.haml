@@ -8,7 +8,7 @@
           #code_error
           %fieldset.form-group
             = text_field_tag :access_key, @access_key, placeholder: 'Enter your RSVP code...', required: true, class: 'form-control'
-          = submit_tag 'Submit', class: 'btn btn-primary'
+          = submit_tag 'Submit', class: 'btn btn-primary btn-lg'
 
       #rsvp_form
         - if @rsvp
@@ -21,7 +21,7 @@
         [data, status, xhr] = event.detail
         if xhr.responseText.indexOf('error') != -1
           json_response = JSON.parse(xhr.responseText)
-          $('#code_error').append '<p>' + json_response.error + '</p>'
+          $('#code_error').append '<p class="alert alert-danger">' + json_response.error + '</p>'
         else
           $('#rsvp_code_form').hide()
           $('#rsvp_form').append xhr.response
