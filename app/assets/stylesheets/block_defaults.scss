@@ -17,3 +17,15 @@
   justify-content: center;
   width: 60%;
 }
+
+@include media-breakpoint-up(xl) {
+  .rsvp-block {
+    display: none;
+  }
+}
+
+@include media-breakpoint-between(sm, xl) {
+  .rsvp-block {
+    margin-bottom: 20px;
+  }
+}

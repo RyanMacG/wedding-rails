@@ -19,16 +19,24 @@
 }
 
 .banner-text {
-  position: absolute;
+  max-height: 100%;
   left: 0;
+  position: absolute;
   width: 100%;
 }
 
-.banner-text .banner-time {
+.banner-text, .banner-time {
   align-items: center;
   display: flex;
   flex-direction: column;
+  // flex-wrap: wrap;
   justify-content: center;
+}
+
+@include media-breakpoint-down(lg) {
+  .banner-time {
+    display: none;
+  }
 }
 
 .banner-text h1 {
@@ -44,5 +52,5 @@
 }
 
 .banner-wrapper img {
-  width: 100%
+  width: 100%;
 }
