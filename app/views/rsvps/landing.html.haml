@@ -1,13 +1,17 @@
 .container
-  - unless @rsvp
-    = form_tag('/access-code', remote: true, id: 'rsvp_code_form') do
-      %div#code_error
-      = text_field_tag :access_key, @access_key, placeholder: 'Enter your RSVP code...', required: true
-      = submit_tag 'Submit'
+  .row
+    .col-md-6.offset-md-3
+      - unless @rsvp
+        = form_tag('/access-code', remote: true, id: 'rsvp_code_form') do
+          %p Please enter your RSVP code and we'll get your details
+          #code_error
+          %fieldset.form-group
+            = text_field_tag :access_key, @access_key, placeholder: 'Enter your RSVP code...', required: true, class: 'form-control'
+          = submit_tag 'Submit', class: 'btn btn-primary'
 
-  %div#rsvp_form
-    - if @rsvp
-      = render partial: 'partials/rsvp_form', locals: { rsvp: @rsvp }
+      #rsvp_form
+        - if @rsvp
+          = render partial: 'partials/rsvp_form', locals: { rsvp: @rsvp }
 
   :coffee
     $(document).ready ->
