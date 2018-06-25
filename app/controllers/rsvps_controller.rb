@@ -14,6 +14,7 @@ class RsvpsController < ApplicationController
   def update
     @rsvp = Rsvp.find(params[:id])
     if @rsvp.update(rsvp_params)
+      flash[:notice] = 'Thanks, we hope to see you in August!'
       redirect_to root_path
     else
       render 'rsvps/landing' and return
@@ -26,6 +27,7 @@ class RsvpsController < ApplicationController
     params.require(:rsvp).permit(
       :dietary,
       :attending,
+      :music_suggestions,
       guests_attributes: [
         :id,
         :name,
