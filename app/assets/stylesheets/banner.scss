@@ -1,0 +1,42 @@
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  font-size: 0;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128,128,128,0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text .banner-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text h1 {
+  text-align: center;
+}
+
+.banner-text h2 {
+  text-align: center;
+}
+
+.banner-time {
+  margin-top: 10px;
+}
+
+.banner-wrapper img {
+  width: 100%
+}

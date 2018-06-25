@@ -1,4 +1,6 @@
 class RsvpsController < ApplicationController
+  before_action :get_rsvp, only: :landing
+
   def find_rsvp
     rsvp = Rsvp.find_by(access_key: params[:access_key])
     if rsvp
@@ -14,8 +16,7 @@ class RsvpsController < ApplicationController
     if @rsvp.update(rsvp_params)
       redirect_to root_path
     else
-      binding.pry
-      render 'application/index' and return
+      render 'rsvps/landing' and return
     end
   end
 
@@ -32,5 +33,11 @@ class RsvpsController < ApplicationController
         :attending
       ]
     )
+  end
+
+  def get_rsvp
+    if cookies[:rsvp_id]
+      @rsvp = Rsvp.find(cookies.encrypted[:rsvp_id])
+    end
   end
 end
