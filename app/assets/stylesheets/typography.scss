@@ -1,10 +1,30 @@
 @import "fonts";
 
 h1 {
+  color: #fff;
   font-family: $font_heading;
+  font-size: 5rem;
   text-rendering: geometricPrecision;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+}
+
+h2 {
+  color: #fff;
+  font-family: $font_body;
+  font-size: 3rem;
+  text-rendering: geometricPrecision;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+}
+
+h3 {
+  color: #fff;
+  font-family: $font_body;
+  text-rendering: geometricPrecision;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
 }
 
 p {
-  font-family: $font_body
+  color: #4C5359;
+  font-family: $font_body;
+  font-size: 1.2rem;
 }
