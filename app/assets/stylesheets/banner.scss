@@ -18,7 +18,7 @@
   justify-content: center;
 }
 
-.banner-text {
+.banner-text .banner-time {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +27,14 @@
 
 .banner-text h1 {
   text-align: center;
+}
+
+.banner-text h2 {
+  text-align: center;
+}
+
+.banner-time {
+  margin-top: 10px;
 }
 
 .banner-wrapper img {
