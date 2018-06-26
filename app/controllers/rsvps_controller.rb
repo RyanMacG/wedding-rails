@@ -1,10 +1,8 @@
 class RsvpsController < ApplicationController
-  before_action :get_rsvp, only: :landing
 
   def find_rsvp
     rsvp = Rsvp.find_by(access_key: params[:access_key].downcase)
     if rsvp
-      cookies.encrypted[:rsvp_id] = rsvp.id
       render partial: 'partials/rsvp_form', locals: { rsvp: rsvp }
     else
       render json: { error: 'Invalid code, please check and try again' }
@@ -37,9 +35,4 @@ class RsvpsController < ApplicationController
     )
   end
 
-  def get_rsvp
-    if cookies[:rsvp_id]
-      @rsvp = Rsvp.find(cookies.encrypted[:rsvp_id])
-    end
-  end
 end
