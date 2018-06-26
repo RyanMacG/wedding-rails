@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_124000) do
+ActiveRecord::Schema.define(version: 2018_06_25_205312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_06_24_124000) do
     t.integer "number_of_guests", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "music_suggestions"
     t.index ["access_key"], name: "index_rsvps_on_access_key"
   end
 

@@ -29,4 +29,9 @@
           .form-group
             = ff.label :attending, 'Can they attend?'
             = ff.check_box :attending
+      %fieldset
+        .form-group
+          = f.label :music_suggestions, 'What songs will get you on the dancefloor?'
+          = f.text_area :music_suggestions, class: 'form-control', rows: 5
+
     = f.submit 'Submit your RSVP', class: 'btn btn-primary btn-lg'

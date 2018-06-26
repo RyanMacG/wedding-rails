@@ -26,10 +26,20 @@ h3 {
 p {
   color: #4C5359;
   font-family: $font_body;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 legend, label {
   color: #4C5359;
   font-family: $font_body;
+}
+
+@include media-breakpoint-between(sm, lg) {
+  label {
+    font-size: 2rem;
+  }
+
+  legend {
+    font-size: 2.5rem;
+  }
 }
