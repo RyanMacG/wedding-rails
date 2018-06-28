@@ -1,5 +1,4 @@
 class RsvpsController < ApplicationController
-
   def find_rsvp
     rsvp = Rsvp.find_by(access_key: params[:access_key].downcase)
     if rsvp
@@ -19,6 +18,10 @@ class RsvpsController < ApplicationController
     end
   end
 
+  def attending_list
+    @rsvps = Rsvp.all.includes(:guests).order(:attending)
+  end
+
   private
 
   def rsvp_params
@@ -34,5 +37,4 @@ class RsvpsController < ApplicationController
       ]
     )
   end
-
 end
