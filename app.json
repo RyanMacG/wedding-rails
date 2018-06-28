@@ -5,7 +5,9 @@
   "env": {
     "RAILS_ENV": "production",
     "SECRET_KEY_BASE": "989e47597aeb66923d714421ec2000359e06a2bbd377c88180500fb0b0a110026fce917a302ca90e9262ee43e4c4ef80d11f35b8cfe34426316af2cbb59420c0",
-    "DEPLOY_TASKS": "db:migrate"
+    "DEPLOY_TASKS": "db:migrate",
+    "AUTH_USER": "test",
+    "AUTH_PASSWORD": "password"
   },
   "formation": {
   },

@@ -1,4 +1,5 @@
 class RsvpsController < ApplicationController
+  http_basic_authenticate_with name: ENV['AUTH_NAME'], password: ENV['AUTH_PASSWORD'], only: :admin
 
   def find_rsvp
     rsvp = Rsvp.find_by(access_key: params[:access_key].downcase)
@@ -19,6 +20,10 @@ class RsvpsController < ApplicationController
     end
   end
 
+  def admin
+    @rsvps = Rsvp.all.order(:attending)
+  end
+
   private
 
   def rsvp_params
@@ -34,5 +39,4 @@ class RsvpsController < ApplicationController
       ]
     )
   end
-
 end
