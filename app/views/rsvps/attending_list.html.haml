@@ -19,12 +19,14 @@
                 %h4
                   Guest Name:
                   = guest.name
-                %p= guest.dietary
+                %p
+                  Dietary:
+                  = guest.dietary
                 %p
                   Guest Attending:
                   = guest.attending
               %p
                 Music Suggestions:
-                = rsvp.music_suggestions
+                = simple_format(rsvp.music_suggestions)
     - else
       %h2 No RSVPs in the database
