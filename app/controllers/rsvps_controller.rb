@@ -19,7 +19,7 @@ class RsvpsController < ApplicationController
   end
 
   def attending_list
-    @rsvps = Rsvp.all.includes(:guests).order(:attending)
+    @rsvps = Rsvp.all.includes(:guests).order(attending: :desc)
   end
 
   private
