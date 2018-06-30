@@ -1,0 +1,28 @@
+.container
+  .admin
+    %h1.text-center RSVP Responses
+
+    - if @rsvps.present?
+      .responses
+        - @rsvps.each do |rsvp|
+          .card.text-center
+            .card-header
+              %h2= rsvp.name
+            .card-body
+              %p= rsvp.dietary
+              %p
+                Attending:
+                = rsvp.attending
+              - rsvp.guests.each do |guest|
+                %h4
+                  Guest Name:
+                  = guest.name
+                %p= guest.dietary
+                %p
+                  Guest Attending:
+                  = guest.attending
+              %p
+                Music Suggestions:
+                = rsvp.music_suggestions
+    - else
+      %h2 No RSVPs in the database
